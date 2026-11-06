@@ -1,3 +1,6 @@
+function openCarFeatures(carType) {
+    window.location.href = `car-features.html?type=${carType}`;
+}
 
 const bookingForm = document.getElementById('bookingForm');
 
