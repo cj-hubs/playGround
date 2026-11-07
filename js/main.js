@@ -1,3 +1,4 @@
+console.log("Main js loaded");
 function openCarFeatures(carType) {
     window.location.href = `car-features.html?type=${carType}`;
 }
