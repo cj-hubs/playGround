@@ -2,7 +2,6 @@ console.log("Main js loaded");
 function openCarFeatures(carType) {
     window.location.href = `car-features.html?type=${carType}`;
 }
-
 const bookingForm = document.getElementById('bookingForm');
 
 bookingForm.addEventListener('submit', function (event) {
@@ -24,13 +23,30 @@ bookingForm.addEventListener('submit', function (event) {
         ['Trip Type', data.get('trip')],
         ['Passengers', data.get('passengers')],
         ['Additional Requirements', data.get('notes') || 'None'],
-        ['Service Area', 'Coimbatore']
     ];
 
     const message = fields
         .map(([key, value]) => value ? `${key}: ${value}` : key)
         .join('\n');
 
+
+    let parms = {
+        subject: "JKM Travels Enquiry",
+        name: data.get('name'),
+        message: message,
+    };
+
+    emailjs.send("service_9b424pr", "template_mya197q", parms)
+        .then((response) => {
+            alert("Enquiry placed successfully!");
+            console.log("SUCCESS!", response.status, response.text);
+        })
+        .catch((error) => {
+            alert("Failed to send enquiry. Please try again.");
+            console.error("FAILED...", error);
+        });
+
+        
     document.getElementById('bookingMessage').value = message;
     document.getElementById('bookingOutput').hidden = false;
 

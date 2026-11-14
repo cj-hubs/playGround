@@ -4,8 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="JKM Tours & Travels in Coimbatore — premium, comfortable and reliable local and outstation travel services.">
-    <title>JKM Tours & Travels | Travel in Comfort</title>
-    <link rel="stylesheet" href="css/main.css">
+        <title>JKM Tours & Travels | Travel in Comfort</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "dDTOvyyWxQTynQqac",
+            });
+        })();
+        </script>
     </head>
     <body>
         <header>
@@ -313,15 +323,18 @@
                                 <label>Vehicle Category
                                     <select name="vehicle" required>
                                         <option value="">Select a category</option>
-                                        <option>Premium Hatchback</option>
-                                        <option>Premium Sedan</option>
                                         <option>Standard Sedan</option>
-                                        <option>Premium MPV</option>
-                                        <option>Standard MPV</option>
-                                        <option>Premium SUV</option>
+                                        <option>Premium Sedan</option>
+                                        <option>Luxury Sedan</option>
+                                        
                                         <option>Standard SUV</option>
-                                        <option>Premium Traveller – 12 Seater</option>
-                                        <option>Standard Tempo Traveller – 12 Seater</option>
+                                        <option>Premium SUV</option>
+                                        <option>Luxury SUV</option>
+                                        
+                                        <option>Tempo Traveller</option>
+                                        <option>Urbania</option>
+                                        <option>Bus</option>
+                                        
                                     </select>
                                 </label>
                                 <label>Trip Type
